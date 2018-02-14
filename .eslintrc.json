@@ -1,0 +1,76 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "standard",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:promise/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "root": true,
+  "rules": {
+    // Possible Errors
+    "no-console": "warn",
+    "valid-jsdoc": "warn",
+
+    // Best Practices
+    "eqeqeq": "error",
+    "radix": "error",
+
+    // Strict Mode
+    "strict": ["error", "global"],
+
+    // Variables
+    "no-shadow": "error",
+    "no-unused-vars": ["error", { "args": "none" }],
+
+    // Node.js and CommonJS
+
+    // Stylistic Issues
+    "comma-dangle": ["error", "never"],
+    "comma-spacing": "error",
+    "comma-style": "error",
+    "eol-last": "error",
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "key-spacing": ["error", { "mode": "minimum" }],
+    "max-depth": ["error", 4],
+    "max-len": "error",
+    "new-cap": ["error", { "capIsNewExceptions": ["URI"] }],
+    "no-multi-spaces": ["error", { "exceptions": {
+      "ImportDeclaration": true,
+      "VariableDeclarator": true
+    }}],
+    "no-multiple-empty-lines": ["error", {
+      "max": 2, "maxBOF": 0, "maxEOF": 0
+    }],
+    "no-tabs": "error",
+    "object-curly-spacing": ["error", "always"],
+    "operator-linebreak": ["error", "before"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "space-before-function-paren": ["error", "never"],
+    "spaced-comment": ["error", "always", { "exceptions": ["*"] }],
+
+    // ECMAScript 6
+    "arrow-parens": ["error", "as-needed"],
+    "generator-star-spacing": ["error", "after"],
+
+    // Promises
+    "promise/avoid-new": "off",
+
+    "react/prop-types": 1
+  }
+}
