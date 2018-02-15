@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Counter extends Component {
+export class Counter extends Component {
   render() {
     return (
-      <div className="cotainer">
+      <div className="container">
         <div className="notification">
           <h1>
             {this.props.count}

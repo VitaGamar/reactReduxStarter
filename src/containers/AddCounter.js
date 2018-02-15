@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addCounter } from '../actions';
+import * as counterActionCreators from '../actions';
 import { bindActionCreators } from 'redux';
 
-class AddCounter extends Component {
+export class AddCounter extends Component {
   render() {
     return (
       <div className="container">
@@ -12,7 +12,7 @@ class AddCounter extends Component {
             <div className="control">
               <button className="button is-primary" onClick={ e => {
                 e.preventDefault();
-                this.props.dispatch(addCounter());
+                this.props.actions.addCounter();
               }}>Add
               </button>
             </div>
@@ -24,7 +24,7 @@ class AddCounter extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(addCounter, dispatch) };
+  return { actions: bindActionCreators(counterActionCreators, dispatch) };
 }
 
-export default connect(mapDispatchToProps)(AddCounter);
+export default connect(null, mapDispatchToProps)(AddCounter);
